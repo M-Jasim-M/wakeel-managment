@@ -13,6 +13,9 @@ import { UserSessionContextProvider } from './Components/UserSessionContext';
 import Cdashboard from './Components/Cdashboard - Copy/Dashboad';
 import ClProtectedRoutes from './Components/Clientproroute';
 import Layerpro from './Components/LayerProfile/Layerpro';
+import Cloth from './Components/Dashboard/Clothes/Clothes';
+import Glass from './Components/Dashboard/glass/Glass';
+import Perfume from './Components/Dashboard/perfume/Perfume';
 
 function App() {
   return (
@@ -23,7 +26,12 @@ function App() {
 <Route path='/' element={<Signup/>}/>
 <Route path='/login' element={<Login/>}/>
 <Route path='/verify' element={<Verification/>}/>
-<Route path='/dash' element={ <ProtectedRoutes> <Dashboad/>  </ProtectedRoutes>}/>
+<Route path="/dash" element={<ProtectedRoutes> <Dashboad/> </ProtectedRoutes>}>
+  <Route index path="clothe" element={<ProtectedRoutes><Cloth /></ProtectedRoutes>} />
+  <Route path="glass" element={<ProtectedRoutes>< Glass/></ProtectedRoutes>} />
+  <Route path="perfume" element={<ProtectedRoutes><Perfume /></ProtectedRoutes>} />
+</Route>
+
 <Route path='/cdash' element={<ClProtectedRoutes> <Cdashboard/> </ClProtectedRoutes> }/>
 <Route path='/layer' element={<Layerpro/>}/>
 <Route path='/resand' element={<ResendVerification/>}/>

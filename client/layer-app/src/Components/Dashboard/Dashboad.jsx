@@ -179,9 +179,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useUserSession } from '../UserSessionContext';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Dashboard.css'
+import Addproduct from './AddProduct/Addproduct';
+import Form from './Form/Form';
 
 function Dashboard() {
   const [user, setUser] = useState(null);
@@ -309,6 +311,13 @@ console.log(userEmail);
             />
             <button onClick={handleLogout}>Logout</button>
             </div>
+
+            <Form/>
+            <br />
+            <NavLink to='/dash/clothe'>Clothes</NavLink>
+            <NavLink to='/dash/glass'>Clothes</NavLink>
+            <NavLink to='/dash/perfume'>Clothes</NavLink>
+            <Outlet/>
             </>
         ) : (
           <div>Loading...</div>

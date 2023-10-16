@@ -1,0 +1,118 @@
+.lmain{
+    background: #ECF2FF;
+    height: 570px;
+display: flex;
+
+}
+.loginleft{
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.loginleft div:nth-of-type(1) div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.loginleft div:nth-of-type(1) div:nth-child(1) img{
+    width: 60px;
+}
+.loginleft input{
+    width:400px;
+    height: 40px;
+    text-indent: 20px;
+    border-radius: 11.907px;
+background: #FFF;
+box-shadow: 0px 4.76291px 50.01059px 0px rgba(0, 0, 0, 0.03);
+outline: none;
+border: none;
+font-size: 16px;
+font-weight: 500;
+}
+.iconcontain{
+position: relative;
+}
+.iconcontain i{
+position: absolute;
+top: 30%;
+right: 5%;
+}
+.formdata{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.admainlabel{
+display: flex;
+width: 100%;
+}
+.admainlabel input{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+}
+.admainlabel label{
+    display: flex;
+    gap: 5px;
+}
+.forget{
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+}
+.forget label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.forget input{
+    width: 20px;
+    height: 20px;
+}
+.forget a{
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.loginright{
+flex: 1;
+}
+.loginright img{
+    width: 100%;
+    height: 567px;
+}
+
+.loginleft button{
+    width:400px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.already{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: start;
+    padding-top: 20px;
+}
+

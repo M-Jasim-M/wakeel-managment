@@ -1,29 +1,43 @@
 /* Signup.css */
+
 .smain{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 40px;
+   padding-top: 20px;
+   background: #ECF2FF;
+}
+.signleft{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
 }
 .logindiv{
     font-size: 25px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.452);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.logindiv img{
+  width: 60px;
 }
 .image-preview {
-    margin-bottom: 20px;
-    width: 150px;
-    height: 150px;
+    margin-bottom: 10px;
+    width: 123px;
+    height: 120px;
     border: 1px solid black;
     border-radius: 50%;
   
   }
   
   .image-preview img {
-    width: 150px;
-    height: 150px;
+    width: 123px;
+    height: 120px;
     border-radius: 50%;
 object-fit: cover;
   }
@@ -47,8 +61,8 @@ object-fit: cover;
     cursor: pointer;
     font-weight: bold;
     position: absolute;
-    top: -57px;
-    left: 109px;
+    top: -51px;
+    left: 77%;
   }
   /* .imageupload img{
     width: 150px;
@@ -61,13 +75,16 @@ object-fit: cover;
     display: none;
   }
 .smain input{
-    width: 40%;
+    width: 70%;
     height: 40px;
-    border: none;
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, 0.454);
-    border-radius: 15px;
     text-indent: 20px;
+    border-radius: 11.907px;
+background: #FFF;
+box-shadow: 0px 4.76291px 50.01059px 0px rgba(0, 0, 0, 0.03);
+outline: none;
+border: none;
+font-size: 16px;
+font-weight: 500;
 }
 .error-message{
     color: red;
@@ -79,16 +96,31 @@ object-fit: cover;
     width: 120px;
     height: 40px;
     font-size: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.356);
+    width: 70%;
+    height: 40px;
+    border-radius: 11.907px;
+    background: blue;
+    box-shadow: 0px 4.76291px 50.01059px 0px rgba(0, 0, 0, 0.03);
     border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
   }
 .paswardinput{
-width: 40%;
+width: 70%;
 display: flex;
 position: relative;
 }
 .paswardinput input{
     width: 100%;
+    text-indent: 20px;
+    border-radius: 11.907px;
+background: #FFF;
+box-shadow: 0px 4.76291px 50.01059px 0px rgba(0, 0, 0, 0.03);
+outline: none;
+border: none;
+font-size: 16px;
+font-weight: 500;
 }
   .paswardinput i:nth-of-type(1){
     position: absolute;
@@ -100,3 +132,38 @@ position: relative;
     top: 38%;
     right: 4%;
   }
+
+.radiobut{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
+.radiobut input{
+width: 30px;
+height: 20px;
+}
+.radiobut label{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 5px;
+}
+
+
+  .signright{
+    flex: 1;
+  }
+  .signright img{
+    width: 100%;
+    height: 547px;
+}
+.alread{
+padding-bottom: 20px;
+font-size: 16px;
+font-weight: 500;
+}
+.alread a{
+  color: blue;
+  font-weight: 600;
+}

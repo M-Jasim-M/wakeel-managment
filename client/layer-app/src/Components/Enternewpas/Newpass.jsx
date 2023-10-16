@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
+import resimg from '../../Assets/Images/login.svg'
 
 function ResetPassword() {
   const [newPassword, setNewPassword] = useState('');
@@ -38,11 +39,20 @@ function ResetPassword() {
   };
 
   return (
-    <div>
-      <h2>Reset Password</h2>
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
-      {successMessage && <div className="success-message">{successMessage}</div>}
-      <label htmlFor="newPassword">Enter your new password:</label>
+    // <div>
+    //   <h2>Reset Password</h2>
+    //   {errorMessage && <div className="error-message">{errorMessage}</div>}
+    //   {successMessage && <div className="success-message">{successMessage}</div>}
+   
+    // </div>
+
+<div className='resmain'>
+    
+<div className="resaleft">
+<h2>Reset Password</h2>
+  {errorMessage && <div className="error-message">{errorMessage}</div>}
+  {successMessage && <div className="success-message">{successMessage}</div>}
+  <label htmlFor="newPassword">Enter your new password:</label>
       <input
         type="password"
         id="newPassword"
@@ -50,7 +60,12 @@ function ResetPassword() {
         onChange={(e) => setNewPassword(e.target.value)}
       />
       <button onClick={handleResetPassword}>Reset Password</button>
-    </div>
+</div>
+
+<div className="resaright">
+<img src={resimg} alt="" />
+</div>
+</div>
   );
 }
 

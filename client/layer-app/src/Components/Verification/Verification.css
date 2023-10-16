@@ -1,0 +1,87 @@
+.vmain{
+    background: #ECF2FF;
+    height: 570px;
+display: flex;
+}
+.verifyleft{
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
+}
+
+.containall{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+}
+.containall div:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+.containall div:nth-of-type(1) img{
+width: 80px;
+}
+
+.containall form label{
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.containall form input{
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-indent: 20px;
+    border-radius: 11.907px;
+background: #FFF;
+box-shadow: 0px 4.76291px 50.01059px 0px rgba(0, 0, 0, 0.03);
+}
+.containall div:nth-of-type(2){
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+.containall div:nth-of-type(2) a{
+    color: black;
+}
+.buttons{
+    display: flex;
+    gap: 40px;
+}
+.buttons button{
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background-color: blue;
+    width: 130px;
+    height: 40px;
+    color: white;
+    border-radius: 15px;
+}
+
+
+
+
+
+
+.verifyright{
+flex: 1;
+}
+
+.verifyright img{
+    width: 100%;
+    height: 567px;
+}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import Signupimg from '../../Assets/Images/login.svg';
+import logo from '../../Assets/Images/login2.png';
 import './Signup.css';
 
 function Signup() {
@@ -66,7 +68,8 @@ console.log(formData);
 
   return (
     <div className="smain">
-      <div className="logindiv">Create Account</div>
+      <div className="signleft">
+      <div className="logindiv"><img src={logo} alt="" /> Sign Up</div>
       {errorMessage && <div className="error-message">{errorMessage}</div>}
       <input type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)} />
       <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -99,6 +102,7 @@ console.log(formData);
           </label>
         </div>
       </div>
+<div className='radiobut'>
       <label>
           <input
             type="radio"
@@ -117,8 +121,15 @@ console.log(formData);
           />
           Layer
         </label>
+        </div>
       <button onClick={submitForm}>Create Account</button>
-      <img src={selectedImage ? URL.createObjectURL(selectedImage) : ''} alt="Selected" />
+      <div className='alread'>Already have an Account? <NavLink to="/login" >Login</NavLink></div>
+      </div>
+
+
+      <div className="signright">
+<img src={Signupimg} alt="" />
+      </div>
     </div>
   );
 }

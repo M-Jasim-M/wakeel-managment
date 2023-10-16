@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
+import verimg from '../../Assets/Images/login.svg'
+import logo from '../../Assets/Images/verify.svg'
+
+import './Verification.css'
 
 function Verification() {
   const [verificationCode, setVerificationCode] = useState('');
@@ -34,12 +38,18 @@ function Verification() {
     }
   };
 
+  const gotohome = ()=>{
+    navigate("/")
+  }
   return (
-    <div>
-      <h2>Verification</h2>
+    <div className="vmain">
+
+<div className="verifyleft">
+<div className='containall'>
+      <div><img src={logo} alt="" /> Verification Code</div>
       {errorMessage && <div className="error-message">{errorMessage}</div>}
-      <form onSubmit={handleVerificationSubmit}>
-        <label htmlFor="verificationCode">Enter 6-digit code:</label>
+      <form>
+        <label htmlFor="verificationCode">Enter 6-digit code:</label><br />
         <input
           type="text"
           id="verificationCode"
@@ -47,9 +57,16 @@ function Verification() {
           onChange={(e) => setVerificationCode(e.target.value)}
           maxLength={6} // Enforce a maximum length of 6 characters
         />
-        <button type="submit">Verify</button>
+        
       </form>
       <div><NavLink to='/resand'>Resand verify email</NavLink></div>
+    </div>
+    <div className='buttons'> <button onClick={gotohome}>Cancal</button> <button onClick={handleVerificationSubmit}>Verify</button></div>
+</div>
+
+<div className="verifyright">
+  <img src={verimg} alt="" />
+</div>
     </div>
   );
 }

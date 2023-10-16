@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './Resend.css'
+import resimg from '../../Assets/Images/login.svg'
 
 function ResendVerification() {
   const [email, setEmail] = useState('');
@@ -27,8 +29,10 @@ function ResendVerification() {
   };
 
   return (
-    <div>
-      <h2>Resend Verification Code</h2>
+    <div className='resmain'>
+    
+    <div className="resaleft">
+    <h2>Resend Verification Code</h2>
       {errorMessage && <div className="error-message">{errorMessage}</div>}
       {successMessage && <div className="success-message">{successMessage}</div>}
       <label htmlFor="email">Enter your email:</label>
@@ -39,6 +43,11 @@ function ResendVerification() {
         onChange={(e) => setEmail(e.target.value)}
       />
       <button onClick={handleResendClick}>Resend Verification Code</button>
+    </div>
+
+    <div className="resaright">
+<img src={resimg} alt="" />
+    </div>
     </div>
   );
 }

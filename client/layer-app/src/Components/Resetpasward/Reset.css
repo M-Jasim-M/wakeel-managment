@@ -1,0 +1,49 @@
+.resmain{
+    background: #ECF2FF;
+    height: 570px;
+display: flex;
+}
+.resaleft{
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 15px;
+}
+.resaleft label{
+    font-size: 16px;
+    font-weight: 500;
+}
+.resaleft input{
+    width: 300px;
+    height: 40px;
+    border: none;
+    text-indent: 20px;
+    outline: none;
+    border-radius: 11.907px;
+    font-size: 16px;
+    font-weight: 500;
+background: #FFF;
+box-shadow: 0px 4.76291px 50.01059px 0px rgba(0, 0, 0, 0.03);
+}
+
+.resaleft button{
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background-color: blue;
+    width: 250px;
+    height: 45px;
+    color: white;
+    border-radius: 15px;
+}
+
+.resaright{
+flex: 1;
+}
+
+.resaright img{
+    width: 100%;
+    height: 567px;
+}

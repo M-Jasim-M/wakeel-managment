@@ -1,7 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
+import login from '../../Assets/Images/login.svg'
+import icon from '../../Assets/Images/login2.png'
+
+import './Login.css'
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -47,26 +50,26 @@ function Login() {
 
       if (response.data.success) {
         // Handle successful login
-        console.log('Login successful');
+        console.log('Login successful' + response.data);
         localStorage.setItem('userSession', JSON.stringify(response.data));
         // const userEmail = response.data.data.email; // Access the email from the response data
         const userType = response.data.user.userType; // Access the userType from the response data
         console.log('User Type:', userType);
         if (userType === 'layer')  {
-          navigate('/dash');
+          navigate('/dash'); // Redirect to '/dash' if userType is 'layer'
         } else {
-          navigate('/cdash');
+          navigate('/cdash'); // Redirect to '/cdash' if userType is not 'layer'
         }
         // console.log('User Email:', userEmail);
         console.log(response.data)
       } else {
         // Handle login failure
         console.error('Login failed');
-        alert('please verify the email adress')
+        alert('Please verify the email address');
       }
     } catch (error) {
       console.error('An error occurred:', error);
-      alert("please verify your email adress")
+      alert('Please verify your email address');
     }
 
     // If "Remember Me" is enabled, store the email in local storage
@@ -93,7 +96,10 @@ function Login() {
   return (
     <>
       <div className="lmain">
-        <div>Login in the website</div>
+       <div className="loginleft">
+    <div className='formdata'>
+
+    <div><img src={icon} alt="" /> Login</div>
         <input
           type="email"
           placeholder="Enter Email"
@@ -101,7 +107,7 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <div>
+        <div className='iconcontain'>
           <input
             type={showPassword ? 'password' : 'text'}
             placeholder="Enter Password"
@@ -112,37 +118,49 @@ function Login() {
           <i onClick={togglePassword} className="fa-solid fa-eye"></i>
         </div>
 
-        <div>
-        <label>
-          <input
-            type="radio"
-            value="client"
-            checked={userType === 'client'}
-            onChange={handleUserTypeChange}
-          />
-          Client
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="layer"
-            checked={userType === 'layer'}
-            onChange={handleUserTypeChange}
-          />
-          Layer
-        </label>
+        <div className='admainlabel'>
+          <label>
+            <input
+              type="radio"
+              value="client"
+              checked={userType === 'client'}
+              onChange={handleUserTypeChange}
+            />
+            Admain
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="layer"
+              checked={userType === 'layer'}
+              onChange={handleUserTypeChange}
+            />
+            Client
+          </label>
+          </div>
+          <div className='forget'>
           <label>
             <input
               type="checkbox"
               name="rememberMe"
               checked={rememberMe}
               onChange={handleRememberMeChange}
-            />{' '}
+            />
             Remember Me
           </label>
-        </div>
+          <NavLink to='/forgot'>Forgot Password?</NavLink></div>
+       
         <button onClick={handleLogin}>Login</button>
-        <div><NavLink to='/forgot'>Forgot Pasward ?</NavLink></div>
+       
+
+    </div>
+    <div className='already'>Don't have an account? <NavLink to="/">Sign up</NavLink> </div>
+       </div>
+
+<div className="loginright">
+<img src={login} alt="" />
+</div>
+
       </div>
     </>
   );

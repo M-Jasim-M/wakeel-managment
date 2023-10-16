@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import resimg from '../../Assets/Images/login.svg'
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -27,11 +28,19 @@ function ForgotPassword() {
   };
 
   return (
-    <div>
-      <h2>Forgot Password</h2>
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
-      {successMessage && <div className="success-message">{successMessage}</div>}
-      <label htmlFor="email">Enter your email:</label>
+    // <div>
+    //   <h2>Forgot Password</h2>
+    //   {errorMessage && <div className="error-message">{errorMessage}</div>}
+    //   {successMessage && <div className="success-message">{successMessage}</div>}
+     
+    // </div>
+     <div className='resmain'>
+    
+     <div className="resaleft">
+     <h2>Resend Verification Code</h2>
+       {errorMessage && <div className="error-message">{errorMessage}</div>}
+       {successMessage && <div className="success-message">{successMessage}</div>}
+       <label htmlFor="email">Enter your email:</label>
       <input
         type="email"
         id="email"
@@ -39,7 +48,12 @@ function ForgotPassword() {
         onChange={(e) => setEmail(e.target.value)}
       />
       <button onClick={handleForgotPassword}>Reset Password</button>
-    </div>
+     </div>
+ 
+     <div className="resaright">
+ <img src={resimg} alt="" />
+     </div>
+     </div>
   );
 }
 
